@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - M00</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: right;
+            font-style: italic;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+         img.innovation-image {
+            max-width: 400px; /* Adjust as needed */
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            var selectedTime = document.getElementById('time-select').value;
+            var activities = document.getElementsByClassName('activity');
+
+            document.getElementById('selected-time').innerText = "Tiempo efectivo de clase: " + selectedTime + " minutos";
+
+            for (var i = 0; i < activities.length; i++) {
+                activities[i].style.display = 'block';
+            }
+
+            if (selectedTime === '45') {
+                document.getElementById('activity-2').style.display = 'none';
+            } else if (selectedTime === '40') {
+                document.getElementById('activity-2').style.display = 'none';
+                document.getElementById('activity-3').style.display = 'none';
+            }
+        }
+
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="header">
+    <h1>Playbook - M00: Introducción</h1>
+</div>
+
+<div class="container">
+    <div class="dropdown">
+        <label for="time-select">Tiempo efectivo de Clase:</label>
+        <select id="time-select" onchange="updateActivities()">
+            <option value="50">50 minutos</option>
+            <option value="45">45 minutos</option>
+            <option value="40">40 minutos</option>
+        </select>
+    </div>
+
+    <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+
+    <!-- -------------------------------------------------Espacio para Actividades --------------------------------------------------------- -->
+
+  <!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('presentacion')">
+        <div class="title">👋 Actividad 1: Presentación ⏰ Tiempo: 8 minutos</div>
+        <div class="subtitle">Conociéndonos y creando un ambiente de colaboración.</div>
+    </div>
+    <div id="presentacion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1 minuto):</strong> Proyectar Diapositiva 2 "Presentación del Instructor".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Hola a todos, Genios! Soy [Tu Nombre] y voy a ser su instructor en este curso sobre Inteligencia Artificial. Más que un profesor, me veo como un guía y un compañero de aprendizaje en este viaje. La IA es un campo que evoluciona constantemente, y estoy emocionado de explorarlo junto a ustedes."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1.5 minutos):</strong> Proyectar Diapositiva 3 "Mi Trayectoria".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Mi camino en la IA comenzó con [Menciona brevemente cómo te iniciaste en la IA, un proyecto que te haya marcado o un momento 'ajá']. He trabajado en [Menciona áreas o proyectos relevantes, adaptándolos al interés de estudiantes de preparatoria. Por ejemplo, puedes hablar de cómo la IA se usa en videojuegos, redes sociales, o en la creación de efectos especiales en películas]. Lo que más me apasiona es cómo la IA puede usarse para resolver problemas reales y crear cosas nuevas."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 3 (0.5 minutos):</strong> Proyectar Diapositiva 4 "Mis Intereses".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Fuera de la IA, me interesa [menciona 1-2 intereses personales, que puedan conectar con los estudiantes. Evita clichés y busca algo genuino]. Creo que es importante tener una variedad de intereses, porque la creatividad y la innovación a menudo surgen de conectar ideas de diferentes campos."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 4 (4 minutos):</strong> Proyectar Diapositiva 5 "Presentación de los Estudiantes".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Ahora, es su turno. Me encantaría conocerlos un poco mejor. Vamos a hacer una ronda rápida donde cada uno diga su nombre, algo que le apasione o le cause curiosidad, y qué esperan de este curso, o qué les gustaría aprender sobre IA. No tengan miedo de compartir sus ideas, ¡aquí todos estamos aprendiendo! ¿Quién quiere comenzar? ... (Después de cada presentación) ¡Gracias, [Nombre]! Es un placer tenerte en el grupo. ¿Quién sigue?"</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 5 (1 minuto):</strong> Proyectar Diapositiva 6 "Reflexión: IA y Emociones".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Para cerrar esta presentación, quiero hacerles una pregunta rápida. Cuando piensan en Inteligencia Artificial, ¿qué emoción les genera? ¿Sienten miedo, curiosidad, emoción, tal vez una mezcla de todo? Levanten la mano si sienten... (menciona cada emoción, dando tiempo para que los estudiantes respondan). Es normal sentir una variedad de emociones, porque la IA es una tecnología poderosa con un gran potencial, pero también con desafíos importantes. Y precisamente de eso vamos a hablar en este curso."</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+    <!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('contexto_curso')">
+        <div class="title">🧭 Actividad 2: Contexto del Curso ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Entendiendo cómo vamos a trabajar juntos y el panorama general del curso.</div>
+    </div>
+    <div id="contexto_curso" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Proyectar Diapositiva 7 "Explicación del Cohort Learning".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Genios, en este curso, no solo van a aprender *sobre* IA, van a aprender *con* IA y *entre* ustedes. Vamos a trabajar con un enfoque de 'Cohort Learning', que es como escalar una montaña en equipo. Cada uno tiene sus fortalezas, sus conocimientos previos, y juntos vamos a llegar a la cima. No se trata de una competencia, sino de una colaboración. Vamos a compartir ideas, a resolver problemas juntos, y a celebrar los logros de cada uno."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (2 minutos):</strong> Proyectar Diapositiva 8 "Metodología de Trabajo".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Nuestra brújula en este viaje serán las 4 P's del MIT Media Lab: Proyectos (Projects), Pasión (Passion), Compañeros (Peers) y Juego (Play). Vamos a crear proyectos que nos permitan aplicar lo que aprendemos, no solo a memorizar conceptos. Vamos a conectar la IA con sus pasiones, con lo que les mueve y les interesa. Vamos a apoyarnos en nuestros compañeros, porque el aprendizaje es más rico cuando se comparte. Y, por supuesto, vamos a divertirnos, porque aprender no tiene por qué ser aburrido. De hecho, cuando nos divertimos, aprendemos mejor."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 3 (1.5 minutos):</strong> Proyectar Diapositiva 9 "Timeline del Curso".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Este curso es como una serie de misiones, 30 para ser exactos. En la primera parte, nos sumergiremos en el mundo de la IA, explorando su impacto en el trabajo y en diferentes industrias. Luego, nos convertiremos en 'Ingenieros de Prompts', aprendiendo a comunicarnos con la IA para obtener lo que necesitamos. Finalmente, descubriremos cómo automatizar tareas y procesos con IA, utilizando herramientas y frameworks poderosos."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 4 (1.5 minutos):</strong> Proyectar Diapositiva 10 "Proyecto Práctico Final".</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Al final de estas misiones, tendrán la oportunidad de aplicar todo lo aprendido en un proyecto práctico. Durante 4 sesiones, trabajarán en un desafío real, utilizando la IA para resolver un problema o crear algo nuevo. Será como su 'examen final', pero en lugar de respuestas de opción múltiple, tendrán la oportunidad de demostrar su creatividad, su ingenio y su dominio de la IA. Yo estaré aquí para guiarlos, pero ustedes serán los protagonistas."</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+    <!-- Actividad 3 -->
+    <div id="activity-3" class="activity">
+        <div class="banner" onclick="toggleContent('brain_gym')">
+            <div class="title">🧠 Actividad 3: Brain Gym ⏰ Tiempo: 13 minutos</div>
+            <div class="subtitle">Contexto de la IA y cómo llegamos al punto actual.</div>
+        </div>
+        <div id="brain_gym" class="content">
+            <table>
+                <tr>
+                    <td><strong>PASO 1 (1 minuto):</strong> Proyectar Diapositiva 11 "Introducción: El Universo de la IA".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Antes de sumergirnos en el 'cómo' de la IA, vamos a explorar el 'qué'. Imaginen la IA como un universo en expansión, con galaxias de diferentes áreas de investigación y desarrollo. Tenemos desde robots que juegan ajedrez hasta sistemas que diseñan nuevos medicamentos. Está la IA que impulsa los coches autónomos, la que crea efectos especiales en películas, y la que nos recomienda qué serie ver a continuación. Es un campo vasto y diverso, y está creciendo a una velocidad impresionante."</td>
+                </tr>
+                <tr>
+                    <td><strong>PASO 2 (1.5 minutos):</strong> Proyectar Diapositiva 12 "Avances Más Allá de lo Popular".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Hoy, cuando hablamos de IA, muchos piensan en ChatGPT o en asistentes virtuales. Pero la IA va mucho más allá. Por ejemplo, en medicina, la IA está ayudando a detectar el cáncer en etapas tempranas con una precisión sorprendente. En agricultura, se utiliza para optimizar el riego y el uso de fertilizantes, aumentando la producción de alimentos. En la industria, la IA está permitiendo crear fábricas inteligentes, que se adaptan a la demanda en tiempo real. Incluso en el arte, la IA está generando música, pinturas y obras literarias que desafían nuestra percepción de la creatividad."</td>
+                </tr>
+                <tr>
+                    <td><strong>PASO 3 (1.5 minutos):</strong> Proyectar Diapositiva 13 "Nuestro Enfoque: Automatización Inteligente".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "En este curso, nos vamos a enfocar en un área específica de la IA: la automatización inteligente de procesos. Imaginen poder delegar tareas repetitivas, tediosas o complejas a una máquina, liberando su tiempo y energía para actividades más creativas y estratégicas. De eso se trata la automatización inteligente. Y para lograrlo, vamos a utilizar tres tecnologías clave: NLP, Deep Learning y LLMs. Vamos a desglosar cada una de ellas."</td>
+                </tr>
+                <tr>
+                    <td><strong>PASO 4 (2 minutos):</strong> Proyectar Diapositiva 14 "NLP: El Traductor Universal".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Empecemos con el Procesamiento del Lenguaje Natural, o NLP. Piensen en el NLP como el traductor universal de la IA. No solo traduce de un idioma a otro, sino que traduce del lenguaje humano al lenguaje de las máquinas, y viceversa. Un ejemplo clásico es cuando le pides a Google que calcule tu tiempo de viaje. Detrás de esa simple pregunta, el NLP está analizando tu ubicación, el destino, las condiciones del tráfico, y traduciendo todo eso en instrucciones que la máquina puede entender. El NLP no solo 'lee' las palabras, sino que busca entender el contexto, la intención, e incluso el sarcasmo. Es como enseñarle a una computadora a leer entre líneas."</td>
+                </tr>
+                <tr>
+                    <td><strong>PASO 5 (2 minutos):</strong> Proyectar Diapositiva 15 "Deep Learning: El Cerebro en Constante Evolución".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Ahora, hablemos de Deep Learning. Imaginen un cerebro artificial, con millones de neuronas interconectadas. Este 'cerebro' no se programa de forma tradicional, sino que aprende de la experiencia. Le mostramos miles de imágenes de gatos, y eventualmente aprende a reconocer un gato por sí mismo. Pero lo más asombroso del Deep Learning es su capacidad de autocorregirse. No necesita que un humano le diga si se equivocó, el sistema ajusta sus conexiones internas para mejorar su rendimiento. Es como un músculo que se fortalece con el ejercicio. Gracias a esta capacidad de autoaprendizaje, el Deep Learning ha logrado avances impresionantes en áreas como el reconocimiento de voz, la visión artificial y el diagnóstico médico."</td>
+                </tr>
+          
+                <tr>
+                    <td><strong>PASO 6 (2 minutos):</strong> Proyectar Diapositiva 16 "LLMs: La Biblioteca de Babel Digital".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Finalmente, llegamos a los Modelos de Lenguaje Extenso, o LLMs. Estos son los gigantes de la IA, entrenados con cantidades masivas de texto. Para que se hagan una idea, GPT-3, uno de los modelos más conocidos, fue entrenado con 45 terabytes de texto. Eso equivale a leer 8 horas diarias durante más de 5 millones de años. Pero la verdadera revolución llegó con GPT-4. Aunque OpenAI no ha revelado la cantidad exacta de datos utilizados, se estima que fue entrenado con alrededor de 1.76 *billones* de parámetros. ¿Qué significa esto? Imaginen que cada parámetro es como una pequeña pieza de conocimiento. GPT-4 tiene tantas piezas de conocimiento que puede generar texto, traducir idiomas, escribir diferentes tipos de contenido creativo, y responder a preguntas complejas de una forma que a veces parece magia."</td>
+                </tr>
+                <tr>
+                    <td><strong>PASO 7 (2 minutos):</strong> Proyectar Diapositiva 17 "Transformer Models: El Secreto Detrás de la Magia".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "¿Cómo logran los LLMs esta hazaña? El secreto está en los 'Transformer Models'. Antes de los Transformers, la IA tenía problemas para entender el contexto en textos largos. Era como si tuviera una memoria a corto plazo limitada. Los Transformers resolvieron esto con un mecanismo llamado 'atención'. Imaginen que están leyendo un artículo y, en lugar de leer cada palabra con la misma intensidad, su cerebro se enfoca en las palabras clave, en las frases que realmente importan. Los Transformers hacen algo similar, prestando más atención a las partes relevantes del texto para entender el significado global. Por eso, modelos como GPT (Generative Pre-trained Transformer) pueden generar textos tan coherentes y creativos."</td>
+                </tr>
+
+                 <tr>
+                    <td><strong>PASO 8 (1 minuto):</strong> Proyectar Diapositiva 18 "Tipos de Inteligencia Artificial".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Para terminar este Brain Gym, ubiquémonos en el mapa de la IA. Actualmente, estamos en la era de la 'Inteligencia Artificial Estrecha' (ANI), que es muy buena en tareas específicas, como jugar ajedrez o reconocer rostros, pero no tiene conciencia ni comprensión general del mundo. El siguiente paso es la 'Inteligencia Artificial General' (AGI), que tendría capacidades cognitivas similares a las de un humano. Podría aprender, razonar y resolver problemas en una amplia variedad de campos. Y, finalmente, algunos hablan de la 'Superinteligencia Artificial' (ASI), que superaría la inteligencia humana en todos los aspectos. Aún estamos lejos de la AGI y la ASI, pero el ritmo de avance es impresionante." <br><br>
+                    <img src="https://s10450.pcdn.co/wp-content/uploads/2019/12/3-types-artificial-intelligence.jpg.webp">
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+<!-- -------------------------------------------------Corte por extensión --------------------------------------------------------- -->
+  <!-- Actividad 4 -->
+    <div id="activity-4" class="activity">
+        <div class="banner" onclick="toggleContent('challenge')">
+            <div class="title">🤣 Actividad 4: Challenge ⏰ Tiempo: 10 minutos</div>
+            <div class="subtitle">¡Convierte a la IA en un comediante!</div>
+        </div>
+        <div id="challenge" class="content">
+            <table>
+                <tr>
+                    <td><strong>PASO 1 (1 minuto):</strong> Proyectar Diapositiva 19 "El Reto: IA Comediante".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Ahora, vamos a poner a prueba el 'sentido del humor' de la IA, si es que tiene uno. Su reto es pedirle a ChatGPT o Gemini que se conviertan en comediantes y les expliquen la diferencia entre NLP, Deep Learning y LLM con un chiste. Pero no cualquier chiste, uno que realmente haga pensar y que, al mismo tiempo, sea divertido."</td>
+                </tr>
+                <tr>
+                    <td><strong>PASO 2 (1 minuto):</strong> Proyectar Diapositiva 20 "Formando Equipos y Ejemplos de Prompts".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Vamos a dividirnos en equipos. Pero, como aún no son expertos en 'Prompt Engineering', les voy a dar algunos ejemplos de prompts que pueden usar como punto de partida. No tienen que usarlos tal cual, pueden modificarlos, combinarlos o crear los suyos propios. Lo importante es que experimenten. Aquí van algunos ejemplos:<br><br>
+                        *  'Eres un comediante de stand-up. Explica la diferencia entre NLP, Deep Learning y LLMs con un chiste que haga reír y pensar a una audiencia de estudiantes de preparatoria.'<br>
+                        * 'Imagina que eres Jerry Seinfeld. Haz un monólogo corto sobre NLP, Deep Learning y LLMs, usando tu estilo característico.'<br>
+                        * 'Eres un profesor de informática con un sentido del humor muy peculiar. Explica la diferencia entre NLP, Deep Learning y LLMs con una analogía cómica.'
+                        "
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>PASO 3 (4 minutos):</strong> Proyectar Diapositiva 21 "¡A Crear Chistes!".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Tienen 4 minutos para trabajar en equipo, interactuar con la IA y obtener sus chistes. Recuerden, no se trata solo de que la IA genere un chiste, sino de que ese chiste explique de forma clara y divertida la diferencia entre los tres conceptos. ¡Sean creativos, experimenten y diviértanse! (El instructor puede circular entre los equipos, ofreciendo ayuda y retroalimentación). Prueben con distintos prompts, si no les convence el resultado a la primera, ¡sigan intentando!"</td>
+                </tr>
+                <tr>
+                   <td><strong>PASO 3.1 (0 minutos):</strong> Proyectar Diapositiva 22 "Cronómetro: 4 minutos."</td>
+                   <td><strong>DIÁLOGO SUGERIDO:</strong> "N/A."</td>
+                </tr>
+
+                <tr>
+                    <td><strong>PASO 4 (4 minutos):</strong> Proyectar Diapositiva 23 "Compartiendo los Chistes y Analizando".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Tiempo! Ahora, cada equipo elegirá su mejor chiste y un miembro del equipo lo compartirá con la clase. Pero no solo vamos a reírnos, también vamos a analizar. Después de cada chiste, vamos a reflexionar juntos: ¿Qué tipo de prompt utilizó el equipo? ¿Qué diferencias notan entre los prompts que generaron los chistes más efectivos y los que no funcionaron tan bien? ¿Qué hace que un prompt sea bueno para este tipo de tarea? (Después de cada presentación, fomentar una breve discusión)."</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+   <!-- Actividad 5 -->
+    <div id="activity-5" class="activity">
+        <div class="banner" onclick="toggleContent('reflexion_final')">
+            <div class="title">🤔 Actividad 5: Reflexión Final ⏰ Tiempo: 2 minutos</div>
+            <div class="subtitle">Cerrando la clase y mirando hacia el futuro.</div>
+        </div>
+        <div id="reflexion_final" class="content">
+            <table>
+                <tr>
+                    <td><strong>PASO 1 (2 minutos):</strong> Proyectar Diapositiva 24 "Reflexión y Cierre".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Excelente trabajo, Genios! Hemos llegado al final de nuestra primera misión, y ha sido un comienzo espectacular. Antes de despedirnos, quiero que compartan sus reflexiones. ¿Qué les pareció más interesante de la clase de hoy? ¿Qué aprendieron sobre la IA que no sabían antes? ¿Qué les gustaría explorar en las próximas misiones? ¿Hay algún tema en particular que les cause curiosidad? Recuerden, este curso es para ustedes, y sus ideas y preguntas son muy importantes. (Abrir el espacio para que los estudiantes compartan sus reflexiones). ¡Gracias a todos por su participación, su entusiasmo y sus chistes! Nos vemos en la próxima misión, donde seguiremos desentrañando los misterios de la Inteligencia Artificial."</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- -------------------------------------------------Espacio para Actividades --------------------------------------------------------- -->
+
+</div>
+
+</body>
+</html>
